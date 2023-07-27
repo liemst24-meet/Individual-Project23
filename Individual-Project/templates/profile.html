@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>profile</title>
+	<link rel= "stylesheet" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+	<h1>{{user['username']}}</h1>
+	<a href="/income"><button>Income updates</button></a>
+	<a href="/expenses"><button>Expenses updates</button></a>
+	<a href="/goals"><button>Goals</button></a>
+	<a href="/edit_profile"><button>Edit profile</button></a>
+	<a href="/signout"><button>Signout</button></a>
+	<a href="/profile"><button>Home</button></a>
+	<br>
+	{% for v in goals %}
+		<p>Goal: {{v}} {{money}}/{{goals[v]}}</p>
+	{% endfor %}
+
+
+
+</body>
+</html>
